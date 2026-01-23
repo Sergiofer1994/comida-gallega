@@ -1,17 +1,18 @@
-# Clone Card — Proyecto de ejemplo con React + Vite ⚡️
+# 🍽️ Comida Gallega — Galería de Platos con React + Vite ⚡️
 
 **Descripción**
 
-Este proyecto es una pequeña **clonación de una tarjeta (card)** hecha con **React** y **Vite**. Incluye una estructura simple de componentes, estilos y recursos estáticos (imágenes) para aprender y experimentar con React moderno y Vite.
+Este proyecto es una **galería interactiva de platos típicos de Galicia** desarrollada con **React** y **Vite**. Presenta una colección de tarjetas (cards) con información sobre la gastronomía gallega tradicional, demostrando buenas prácticas en React moderno y herramientas de construcción rápida con Vite.
 
 ---
 
 ## 🚀 Características
 
-- Proyecto creado con Vite (arranque rápido y HMR).
-- Arquitectura basada en componentes React.
-- Estilos CSS modulares para componentes (ej.: `Testimonio.css`).
-- Soporta comandos comunes: desarrollo, build y preview.
+- Proyecto creado con Vite (arranque ultrarrápido, HMR y build optimizado).
+- Arquitectura modular basada en componentes React reutilizables.
+- Componente `Tarjeta` para mostrar platos de forma estilizada.
+- Estilos CSS moderno y responsive.
+- Fácil de extender con nuevos platos y categorías.
 
 ---
 
@@ -65,31 +66,32 @@ npm run lint
 
 ## 📁 Estructura del proyecto (resumen)
 
-- `index.html` — entrada HTML
+- `index.html` — entrada HTML de la aplicación
 - `src/main.jsx` — punto de entrada React
-- `src/App.jsx` — componente raíz
-- `src/components/Testimonio.jsx` — componente de ejemplo
-- `src/styles/Testimonio.css` — estilos del componente
-- `src/assets/img/` — imágenes usadas en la interfaz
-- `package.json` — scripts y dependencias
+- `src/App.jsx` — componente raíz de la aplicación
+- `src/components/tarjeta/Tarjeta.jsx` — componente reutilizable de tarjeta de plato
+- `src/components/tarjeta/Tarjeta.css` — estilos del componente Tarjeta
+- `src/styles/` — estilos compartidos y globales
+- `src/assets/img/` — imágenes de platos gallegos
+- `src/index.css` — estilos globales
+- `src/App.css` — estilos específicos de App
+- `package.json` — dependencias y scripts npm
 
----
 
 ## ✏️ Cómo extender el proyecto
 
-- Añadir nuevos componentes en `src/components/`.
-- Agregar imágenes en `src/assets/img/` y referenciarlas desde los componentes.
-- Para estilos globales utiliza `index.css` o crea archivos CSS por componente.
+- **Agregar nuevos platos:** Crea instancias adicionales del componente `Tarjeta` en `App.jsx` con diferentes props (nombre, descripción, imagen).
+- **Añadir imágenes:** Coloca nuevas imágenes en `src/assets/img/` y referenciarlas en los componentes.
+- **Personalizar estilos:** Modifica `Tarjeta.css`, `App.css` o `index.css` según tus necesidades de diseño.
+- **Crear categorías:** Agrupa platos por categorías (entrantes, platos principales, postres, bebidas).
 
----
+## ✅ Convenciones y buenas prácticas
 
-## ✅ Buenas prácticas sugeridas
-
-- Mantén componentes pequeños y reutilizables.
-- Usa ESLint para mantener consistencia de código.
-- Añade testing (Jest/React Testing Library) si el proyecto crece.
+- Los nombres de componentes están en **PascalCase** (ej.: `Tarjeta.jsx`).
+- Los estilos CSS están colocalizados con sus componentes.
+- Se usa **ESLint** para mantener consistencia de código.
+- Considera agregar **testing** (Vitest/React Testing Library) para componentes críticos.
+- Mantén componentes pequeños, simples y reutilizables.
 
 ## 📄 Licencia
-
-CC By
-# comida-gallega
+CC BY
