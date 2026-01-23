@@ -1,34 +1,62 @@
-import './App.css';
-import Testimonio from './components/Testimonio.jsx';
+import Tarjeta from "./components/tarjeta/Tarjeta.jsx";
+import GalicianEmpanada from "./assets/img/GalicianEmpanada.jpg";
+import GalicianBroth from "./assets/img/GalicianBroth.jpg";
+import HamHockWithTurnipGreens from "./assets/img/HamHockWithTurnipGreens.jpg";
+import SantiagoCake from "./assets/img/SantiagoCake.jpg";
+import GalicianStyleOctopus from "./assets/img/GalicianStyleOctopus.jpg";
+import "./App.css";
+
 function App() {
+  const platos = [
+    {
+      nombre: "Pulpo a la gallega",
+      tipo: "Plato principal",
+      descripcion: "Pulpo cocido servido con patatas, aceite de oliva y pimentón.",
+      imagen: GalicianStyleOctopus,
+    },
+    {
+      nombre: "Empanada gallega",
+      tipo: "Entrante",
+      descripcion: "Masa rellena de atún, carne o marisco.",
+      imagen: GalicianEmpanada,
+    },
+    {
+      nombre: "Lacón con grelos",
+      tipo: "Plato principal",
+      descripcion: "Lacón cocido acompañado de grelos y patatas.",
+      imagen: HamHockWithTurnipGreens,
+    },
+    {
+      nombre: "Caldo gallego",
+      tipo: "Sopa",
+      descripcion: "Caldo tradicional con grelos, patatas y alubias.",
+      imagen: GalicianBroth,
+    },
+    {
+      nombre: "Tarta de Santiago",
+      tipo: "Postre",
+      descripcion: "Bizcocho de almendra típico de Galicia.",
+      imagen: SantiagoCake,
+    },
+  ];
+
   return (
-    <div className="App">
+    <div className="app">
       <h1>Comida gallega</h1>
-        <Testimonio
-          nombre='Emma Bostian'
-          pais='Suecia'
-          imagen='Emma'
-          cargo='Ingeniera de Software'
-          empresa='Spotify'
-          testimonio='Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en freeCodeCamp me dio las habilidades y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.'
-        />
-        <Testimonio
-          nombre='Shawn Wang'
-          pais='Singapur'
-          imagen='Shawn'
-          cargo='Ingeniero de Software'
-          empresa='Amazon'
-          testimonio='Da miedo cambiar de carrera. Solo gané la confianza de que podía programar trabajando a través de los cientos de horas de lecciones gratuitas en freeCodeCamp. Dentro de un año tuve un trabajo de seis cifras como ingeniero de software. freeCodeCamp cambió mi vida.'
-        />
-        <Testimonio
-          nombre='Sarah Chima'
-          pais='Nigeria'
-          imagen='Sarah'
-          cargo='Ingeniera de Software'
-          empresa='ChatDesk'
-          testimonio='freeCodeCamp fue la puerta de entrada a mi carrera como desarrolladora de software. El plan de estudios bien estructurado llevó mis conocimientos de codificación desde un nivel de principiante total hasta un nivel muy seguro. Era todo lo que necesitaba para conseguir mi primer trabajo como desarrolladora en una empresa increíble.'
-        />
+
+      <div className="contenedor-tarjetas">
+        {platos.map((plato, index) => (
+          <Tarjeta
+            key={index}
+            nombre={plato.nombre}
+            tipo={plato.tipo}
+            descripcion={plato.descripcion}
+            imagen={plato.imagen}
+          />
+        ))}
       </div>
+    </div>
   );
 }
+
 export default App;
